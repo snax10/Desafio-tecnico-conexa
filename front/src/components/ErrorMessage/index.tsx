@@ -7,7 +7,11 @@ interface ErrorMessageProps {
 }
 
 const ErrorMessage: FC<ErrorMessageProps> = ({ children }) => {
-  return <ErrorMessageContainer>{children}</ErrorMessageContainer>;
+  return (
+    <ErrorMessageContainer data-testid="error_message">
+      {children}
+    </ErrorMessageContainer>
+  );
 };
 
 export { ErrorMessage };

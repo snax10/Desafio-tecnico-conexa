@@ -7,7 +7,11 @@ interface ButtonOutlineProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const ButtonTransparent: FC<ButtonOutlineProps> = ({ children, ...props }) => {
-  return <ButtonContainer {...props}>{children}</ButtonContainer>;
+  return (
+    <ButtonContainer {...props} data-testid="button_transparent">
+      {children}
+    </ButtonContainer>
+  );
 };
 
 export { ButtonTransparent };

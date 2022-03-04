@@ -30,10 +30,10 @@ const Input: FC<InputProps> = ({
   name,
   label,
   tooltip,
-  ...props
+  ...rest
 }) => {
   const [isShowingContent, setIsShowingContent] = useState(false);
-  const inputRef = useRef(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   const { fieldName, defaultValue, error, registerField } = useField(name);
 
   useEffect(() => {
@@ -67,7 +67,7 @@ const Input: FC<InputProps> = ({
           id={fieldName}
           ref={inputRef}
           defaultValue={defaultValue}
-          {...props}
+          {...rest}
         />
         {type === 'password' ? (
           <button type="button" onClick={toggleShowContent}>
